@@ -8,7 +8,7 @@ namespace APICorePedidos.Dominio.Entidades
 
         public string Email { get; set; }
 
-        public string CPf { get; set; }
+        public string CPF { get; set; }
 
         public double ValorTotal { get; set; }
 
