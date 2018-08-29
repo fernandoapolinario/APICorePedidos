@@ -9,9 +9,9 @@ namespace APICorePedidos.Dominio.Interfaces
 
         void Alterar(T pedido);
 
-        void Remover(string id);
+        void Deletar(int id);
 
-        T ObterPorID(string id);
+        T ObterPorID(int id);
 
         IEnumerable<T> ObterTudo();
     }

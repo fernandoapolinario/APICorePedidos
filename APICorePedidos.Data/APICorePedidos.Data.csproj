@@ -8,9 +8,4 @@
     <ProjectReference Include="..\APICorePedidos.Dominio\APICorePedidos.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contexto\" />
-    <Folder Include="Repositorio\" />
-  </ItemGroup>
-
 </Project>

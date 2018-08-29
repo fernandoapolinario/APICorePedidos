@@ -15,5 +15,7 @@ namespace APICorePedidos.Dominio.Interfaces
         T ObterPorID(int id);
 
         IEnumerable<T> ObterTudo();
+
+        void Validar(T obj, AbstractValidator<T> validator);
     }
 }
