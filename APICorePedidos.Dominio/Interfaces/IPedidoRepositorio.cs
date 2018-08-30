@@ -5,9 +5,9 @@ namespace APICorePedidos.Dominio.Interfaces
 {
     public interface IPedidoRepositorio<T> where T : EntidadeBase
     {
-        void Inserir(T pedido);
+        int Inserir(T pedido);
 
-        void Alterar(T pedido);
+        void Alterar(T pedido, int id);
 
         void Deletar(int id);
 

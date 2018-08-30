@@ -18,9 +18,9 @@ namespace APICorePedidos.Aplicacao.Controllers
         {
             try
             {
-                _servico.Inserir<ValidadorPedido>(item);
+                var id = _servico.Inserir<ValidadorPedido>(item);
 
-                return new ObjectResult(item.Id);
+                return new ObjectResult(id);
             }
             catch (ArgumentNullException ex)
             {
@@ -34,11 +34,11 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpPut]
         [Route("Alterar")]
-        public IActionResult Put([FromBody] Pedido item)
+        public IActionResult Put([FromBody] Pedido item, int id)
         {
             try
             {
-                _servico.Alterar<ValidadorPedido>(item);
+                _servico.Alterar<ValidadorPedido>(item, id);
 
                 return new ObjectResult(item);
             }
@@ -74,7 +74,7 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpGet]
         [Route("ObterTudo")]
-        public IActionResult Get()
+        public IActionResult GetAll()
         {
             try
             {
@@ -88,7 +88,7 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpGet]
         [Route("ObterPorId")]
-        public IActionResult GetAll(int id)
+        public IActionResult Get(int id)
         {
             try
             {

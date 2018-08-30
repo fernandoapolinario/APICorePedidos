@@ -6,9 +6,9 @@ namespace APICorePedidos.Dominio.Interfaces
 {
     public interface IPedidoServico<T> where T : EntidadeBase
     {
-        T Inserir<V>(T obj) where V : AbstractValidator<T>;
+        int Inserir<V>(T obj) where V : AbstractValidator<T>;
 
-        T Alterar<V>(T obj) where V : AbstractValidator<T>;
+        void Alterar<V>(T obj, int id) where V : AbstractValidator<T>;
 
         void Deletar(int id);
 
