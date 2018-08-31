@@ -8,14 +8,12 @@ namespace APICorePedidos.Dominio.Interfaces
     {
         int Inserir<V>(Pedido obj) where V : AbstractValidator<Pedido>;
 
-        void Alterar<V>(Pedido obj, int id) where V : AbstractValidator<Pedido>;
+        void Alterar<V>(Pedido obj) where V : AbstractValidator<Pedido>;
 
         void Deletar(int id);
 
         Pedido ObterPorID(int id);
 
-        IEnumerable<Pedido> ObterTudo();
-
-        void Validar(Pedido obj, AbstractValidator<Pedido> validator);
+        IEnumerable<Pedido> ObterTodos();
     }
 }

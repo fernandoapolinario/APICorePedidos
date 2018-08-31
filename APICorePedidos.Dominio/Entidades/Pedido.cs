@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 
 namespace APICorePedidos.Dominio.Entidades
 {
@@ -13,5 +14,10 @@ namespace APICorePedidos.Dominio.Entidades
         public double ValorTotal { get; set; }
 
         public DateTime DataPedido { get; set; }
+
+        public void Validar(AbstractValidator<Pedido> validator)
+        {
+            validator.ValidateAndThrow(this);
+        }
     }
 }

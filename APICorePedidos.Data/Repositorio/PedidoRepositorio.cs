@@ -11,16 +11,16 @@ namespace APICorePedidos.Data.Repositorio
 {
     public class PedidoRepositorio : SqlContexto, IPedidoRepositorio
     {
-        public PedidoRepositorio(IConfiguration confi) : base(confi) { }
+        public PedidoRepositorio(IConfiguration config) : base(config) { }
 
-        public void Alterar(Pedido pedido, int id)
+        public void Alterar(Pedido pedido)
         {
             using (IDbConnection db = BDConexao)
             {
                 var result = db.Execute("sp_Pedidos_Alterar",
                     new
                     {
-                        @Id = id,
+                        @Id = pedido.Id,
                         @NomeCliente = pedido.NomeCliente,
                         @Email = pedido.Email,
                         @CPF = pedido.CPF,
@@ -64,7 +64,7 @@ namespace APICorePedidos.Data.Repositorio
             return pedidoRetorno;
         }
 
-        public IEnumerable<Pedido> ObterTudo()
+        public IEnumerable<Pedido> ObterTodos()
         {
             IEnumerable<Pedido> listaRetorno;
             using (IDbConnection db = BDConexao)

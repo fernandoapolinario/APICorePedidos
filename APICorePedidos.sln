@@ -11,19 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Servico", "3 - Servico"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{ADC9DDFE-C8A6-49D3-B3B1-A8AB36F8D50D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{4D56A259-1236-4E46-9CBF-7E2653772A5D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Dados", "4.1 - Dados", "{4D56A259-1236-4E46-9CBF-7E2653772A5D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{EE4E900E-2BB6-474D-B002-305FBD1868B2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Seedwork", "4.2 - Seedwork", "{EE4E900E-2BB6-474D-B002-305FBD1868B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICorePedidos.Data", "APICorePedidos.Data\APICorePedidos.Data.csproj", "{74EF1B11-36DB-4C32-B309-83DD43957104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Dados", "APICorePedidos.Data\Pedidos.Dados.csproj", "{74EF1B11-36DB-4C32-B309-83DD43957104}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICorePedidos.CrossCutting", "APICorePedidos.CrossCutting\APICorePedidos.CrossCutting.csproj", "{165ED022-49D7-4DD7-AF33-F8D8E5EBAB03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Seedwork", "APICorePedidos.CrossCutting\Pedidos.Seedwork.csproj", "{165ED022-49D7-4DD7-AF33-F8D8E5EBAB03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICorePedidos.Aplicacao", "APICorePedidos.Aplicacao\APICorePedidos.Aplicacao.csproj", "{BECE5DED-6ACB-49A6-A94C-CC6B18DCAC7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Aplicacao", "APICorePedidos.Aplicacao\Pedidos.Aplicacao.csproj", "{BECE5DED-6ACB-49A6-A94C-CC6B18DCAC7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICorePedidos.Dominio", "APICorePedidos.Dominio\APICorePedidos.Dominio.csproj", "{38BC17FB-AA06-4C79-BDD9-831452EC5527}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Dominio", "APICorePedidos.Dominio\Pedidos.Dominio.csproj", "{38BC17FB-AA06-4C79-BDD9-831452EC5527}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICorePedidos.Servico", "APICorePedidos.Servico\APICorePedidos.Servico.csproj", "{619298B8-4FF3-426C-B8A7-17235FB92E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedidos.Servico", "APICorePedidos.Servico\Pedidos.Servico.csproj", "{619298B8-4FF3-426C-B8A7-17235FB92E3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

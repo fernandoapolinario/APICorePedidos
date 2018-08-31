@@ -1,7 +1,7 @@
 ﻿using APICorePedidos.Dominio.Entidades;
 using APICorePedidos.Dominio.Interfaces;
-using APICorePedidos.Servico.Validadores;
 using Microsoft.AspNetCore.Mvc;
+using Pedidos.Dominio.Validadores;
 using System;
 
 namespace APICorePedidos.Aplicacao.Controllers
@@ -23,7 +23,7 @@ namespace APICorePedidos.Aplicacao.Controllers
         {
             try
             {
-                var id = _servico.Inserir<ValidadorPedido>(item);
+                var id = _servico.Inserir<PedidoValidador>(item);
 
                 return new ObjectResult(id);
             }
@@ -39,11 +39,11 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpPut]
         [Route("Alterar")]
-        public IActionResult Put([FromBody] Pedido item, int id)
+        public IActionResult Put([FromBody] Pedido item)
         {
             try
             {
-                _servico.Alterar<ValidadorPedido>(item, id);
+                _servico.Alterar<PedidoValidador>(item);
 
                 return new ObjectResult(item);
             }
@@ -83,7 +83,7 @@ namespace APICorePedidos.Aplicacao.Controllers
         {
             try
             {
-                return new ObjectResult(_servico.ObterTudo());
+                return new ObjectResult(_servico.ObterTodos());
             }
             catch (Exception ex)
             {

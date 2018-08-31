@@ -7,12 +7,12 @@ namespace APICorePedidos.Dominio.Interfaces
     {
         int Inserir(Pedido pedido);
 
-        void Alterar(Pedido pedido, int id);
+        void Alterar(Pedido pedido);
 
         void Deletar(int id);
 
         Pedido ObterPorID(int id);
 
-        IEnumerable<Pedido> ObterTudo();
+        IEnumerable<Pedido> ObterTodos();
     }
 }

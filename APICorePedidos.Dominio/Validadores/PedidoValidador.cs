@@ -3,18 +3,18 @@ using APICorePedidos.Dominio.Entidades;
 using FluentValidation;
 using System;
 
-namespace APICorePedidos.Servico.Validadores
+namespace Pedidos.Dominio.Validadores
 {
-    public class ValidadorPedido : AbstractValidator<Pedido>
+    public class PedidoValidador : AbstractValidator<Pedido>
     {
-        public ValidadorPedido()
+        public PedidoValidador()
         {
             RuleFor(c => c)
-                    .NotNull()
-                    .OnAnyFailure(x =>
-                    {
-                        throw new ArgumentNullException("Não foi possível encontrar o registro.");
-                    });
+                .NotNull()
+                .OnAnyFailure(x =>
+                {
+                    throw new ArgumentNullException("Não foi possível encontrar o registro.");
+                });
 
             RuleFor(c => c.NomeCliente)
                 .NotEmpty().WithMessage("É necessário informar um nome.")

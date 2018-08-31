@@ -16,50 +16,33 @@ namespace APICorePedidos.Servico.Servicos
             _repositorio = pedidoRepositorio;
         }
 
-        public void Alterar<V>(Pedido obj, int id) where V : AbstractValidator<Pedido>
+        public void Alterar<V>(Pedido obj) where V : AbstractValidator<Pedido>
         {
-            if (id == 0)
-                throw new ArgumentException("Insira um ID válido.");
+            obj.Validar(Activator.CreateInstance<V>());
 
-            Validar(obj, Activator.CreateInstance<V>());
-
-            _repositorio.Alterar(obj, id);
+            _repositorio.Alterar(obj);
         }
 
         public void Deletar(int id)
         {
-            if (id == 0)
-                throw new ArgumentException("Insira um ID válido.");
-
             _repositorio.Deletar(id);
         }
 
         public int Inserir<V>(Pedido obj) where V : AbstractValidator<Pedido>
         {
-            Validar(obj, Activator.CreateInstance<V>());
+            obj.Validar(Activator.CreateInstance<V>());
 
             return _repositorio.Inserir(obj);
         }
 
         public Pedido ObterPorID(int id)
         {
-            if (id == 0)
-                throw new ArgumentException("Insira um ID válido.");
-
             return _repositorio.ObterPorID(id);
         }
 
-        public IEnumerable<Pedido> ObterTudo()
+        public IEnumerable<Pedido> ObterTodos()
         {
-            return _repositorio.ObterTudo().OrderByDescending(x => x.DataPedido);
-        }
-
-        public void Validar(Pedido obj, AbstractValidator<Pedido> validator)
-        {
-            if (obj == null)
-                throw new Exception("Registros não encontrados!");
-
-            validator.ValidateAndThrow(obj);
+            return _repositorio.ObterTodos().OrderByDescending(x => x.DataPedido);
         }
     }
 }
