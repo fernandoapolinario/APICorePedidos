@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace APICorePedidos.Dominio.Interfaces
 {
-    public interface IPedidoRepositorio<T> where T : EntidadeBase
+    public interface IPedidoRepositorio
     {
-        int Inserir(T pedido);
+        int Inserir(Pedido pedido);
 
-        void Alterar(T pedido, int id);
+        void Alterar(Pedido pedido, int id);
 
         void Deletar(int id);
 
-        T ObterPorID(int id);
+        Pedido ObterPorID(int id);
 
-        IEnumerable<T> ObterTudo();
+        IEnumerable<Pedido> ObterTudo();
     }
 }

@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using APICorePedidos.Data.Repositorio;
-using APICorePedidos.Dominio.Entidades;
+﻿using APICorePedidos.Dominio.Entidades;
 using APICorePedidos.Dominio.Interfaces;
 using FluentValidation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace APICorePedidos.Servico.Servicos
 {
-    public class PedidoServico<T> : IPedidoServico<Pedido>
+    public class PedidoServico : IPedidoServico
     {
-        private PedidoRepositorio _repositorio = new PedidoRepositorio();
+        private IPedidoRepositorio _repositorio;
+
+        public PedidoServico(IPedidoRepositorio pedidoRepositorio)
+        {
+            _repositorio = pedidoRepositorio;
+        }
 
         public void Alterar<V>(Pedido obj, int id) where V : AbstractValidator<Pedido>
         {

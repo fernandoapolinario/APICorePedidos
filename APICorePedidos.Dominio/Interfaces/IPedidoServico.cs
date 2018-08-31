@@ -4,18 +4,18 @@ using System.Collections.Generic;
 
 namespace APICorePedidos.Dominio.Interfaces
 {
-    public interface IPedidoServico<T> where T : EntidadeBase
+    public interface IPedidoServico
     {
-        int Inserir<V>(T obj) where V : AbstractValidator<T>;
+        int Inserir<V>(Pedido obj) where V : AbstractValidator<Pedido>;
 
-        void Alterar<V>(T obj, int id) where V : AbstractValidator<T>;
+        void Alterar<V>(Pedido obj, int id) where V : AbstractValidator<Pedido>;
 
         void Deletar(int id);
 
-        T ObterPorID(int id);
+        Pedido ObterPorID(int id);
 
-        IEnumerable<T> ObterTudo();
+        IEnumerable<Pedido> ObterTudo();
 
-        void Validar(T obj, AbstractValidator<T> validator);
+        void Validar(Pedido obj, AbstractValidator<Pedido> validator);
     }
 }

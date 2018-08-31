@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using APICorePedidos.Data.Repositorio;
+using APICorePedidos.Dominio.Interfaces;
+using APICorePedidos.Servico.Servicos;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +21,10 @@ namespace APICorePedidos.Aplicacao
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //Injeção de dependencia para usar o IConfiguration no SqlContext
+            services.AddTransient<IPedidoRepositorio, PedidoRepositorio>();
+            services.AddTransient<IPedidoServico, PedidoServico>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

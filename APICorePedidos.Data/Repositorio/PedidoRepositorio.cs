@@ -2,14 +2,17 @@
 using APICorePedidos.Dominio.Entidades;
 using APICorePedidos.Dominio.Interfaces;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
 namespace APICorePedidos.Data.Repositorio
 {
-    public class PedidoRepositorio : SqlContexto, IPedidoRepositorio<Pedido>
+    public class PedidoRepositorio : SqlContexto, IPedidoRepositorio
     {
+        public PedidoRepositorio(IConfiguration confi) : base(confi) { }
+
         public void Alterar(Pedido pedido, int id)
         {
             using (IDbConnection db = BDConexao)
@@ -54,7 +57,7 @@ namespace APICorePedidos.Data.Repositorio
             Pedido pedidoRetorno = null;
             using (IDbConnection db = BDConexao)
             {
-                pedidoRetorno = db.Query<Pedido>("sp_Pedidos_ObterPorId", 
+                pedidoRetorno = db.Query<Pedido>("sp_Pedidos_ObterPorId",
                     new { Id = id }, commandType: System.Data.CommandType.StoredProcedure).FirstOrDefault();
             }
 
@@ -66,7 +69,7 @@ namespace APICorePedidos.Data.Repositorio
             IEnumerable<Pedido> listaRetorno;
             using (IDbConnection db = BDConexao)
             {
-                listaRetorno = db.Query<Pedido>("sp_Pedidos_Obter", 
+                listaRetorno = db.Query<Pedido>("sp_Pedidos_Obter",
                     commandType: System.Data.CommandType.StoredProcedure).ToList();
             }
 

@@ -1,5 +1,5 @@
 ﻿using APICorePedidos.Dominio.Entidades;
-using APICorePedidos.Servico.Servicos;
+using APICorePedidos.Dominio.Interfaces;
 using APICorePedidos.Servico.Validadores;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,7 +10,12 @@ namespace APICorePedidos.Aplicacao.Controllers
     [Route("api/Pedidos")]
     public class PedidosController : Controller
     {
-        private PedidoServico<Pedido> _servico = new PedidoServico<Pedido>();
+        private IPedidoServico _servico;
+
+        public PedidosController(IPedidoServico pedidoServico)
+        {
+            _servico = pedidoServico;
+        }
 
         [HttpPost]
         [Route("Inserir")]
