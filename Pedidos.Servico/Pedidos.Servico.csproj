@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pedidos.Seedwork\Pedidos.Seedwork.csproj" />
+    <ProjectReference Include="..\Pedidos.Dados\Pedidos.Dados.csproj" />
+    <ProjectReference Include="..\Pedidos.Dominio\Pedidos.Dominio.csproj" />
+  </ItemGroup>
+
+</Project>

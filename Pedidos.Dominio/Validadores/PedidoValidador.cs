@@ -32,11 +32,11 @@ namespace Pedidos.Dominio.Validadores
 
             RuleFor(c => c.ValorTotal)
                 .NotEmpty().WithMessage("É necessário informar um valor total.")
-                .NotNull().WithMessage("É necessário informar um valor total.");
+                .NotNull().WithMessage("É necessário informar um valor total.")
+                .GreaterThan(0).WithMessage("O valor tem que ser maior que zero.");
 
             RuleFor(c => c.DataPedido)
-                .NotEmpty().WithMessage("É necessário informar uma data do pedido.")
-                .NotNull().WithMessage("É necessário informar uma data do pedido.");
+                .NotEqual(new DateTime()).WithMessage("É necessário informar uma data do pedido.");
         }
     }
 }

@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\APICorePedidos.Dominio\Pedidos.Dominio.csproj" />
-    <ProjectReference Include="..\APICorePedidos.Servico\Pedidos.Servico.csproj" />
+    <ProjectReference Include="..\Pedidos.Dominio\Pedidos.Dominio.csproj" />
+    <ProjectReference Include="..\Pedidos.Servico\Pedidos.Servico.csproj" />
   </ItemGroup>
 
 </Project>

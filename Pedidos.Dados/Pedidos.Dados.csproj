@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\APICorePedidos.Dominio\Pedidos.Dominio.csproj" />
+    <ProjectReference Include="..\Pedidos.Dominio\Pedidos.Dominio.csproj" />
   </ItemGroup>
 
 </Project>
