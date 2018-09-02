@@ -31,8 +31,6 @@ namespace Pedidos.Dominio.Validadores
                 .Must(ValidadorCPF.CPFValido).WithMessage("É necessário um CPF válido");
 
             RuleFor(c => c.ValorTotal)
-                .NotEmpty().WithMessage("É necessário informar um valor total.")
-                .NotNull().WithMessage("É necessário informar um valor total.")
                 .GreaterThan(0).WithMessage("O valor tem que ser maior que zero.");
 
             RuleFor(c => c.DataPedido)

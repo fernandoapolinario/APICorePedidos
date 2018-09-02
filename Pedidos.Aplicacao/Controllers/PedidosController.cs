@@ -19,13 +19,13 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpPost]
         [Route("Inserir")]
-        public IActionResult Post([FromBody] Pedido item)
+        public IActionResult Inserir([FromBody] Pedido item)
         {
             try
             {
-                var id = _servico.Inserir<PedidoValidador>(item);
+                item.Id = _servico.Inserir<PedidoValidador>(item);
 
-                return new ObjectResult(id);
+                return CreatedAtAction(nameof(ObterPorId), new { id = item.Id }, item);
             }
             catch (ArgumentNullException ex)
             {
@@ -39,7 +39,7 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpPut]
         [Route("Alterar")]
-        public IActionResult Put([FromBody] Pedido item)
+        public IActionResult Alterar([FromBody] Pedido item)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpDelete]
         [Route("Deletar")]
-        public IActionResult Delete(int id)
+        public IActionResult Deletar(int id)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpGet]
         [Route("ObterTudo")]
-        public IActionResult GetAll()
+        public IActionResult ObterTudo()
         {
             try
             {
@@ -93,7 +93,7 @@ namespace APICorePedidos.Aplicacao.Controllers
 
         [HttpGet]
         [Route("ObterPorId")]
-        public IActionResult Get(int id)
+        public IActionResult ObterPorId(int id)
         {
             try
             {

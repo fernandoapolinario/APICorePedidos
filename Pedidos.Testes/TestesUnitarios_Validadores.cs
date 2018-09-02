@@ -12,7 +12,7 @@ namespace Pedidos.Testes
         public void CasoSucesso()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
@@ -33,7 +33,7 @@ namespace Pedidos.Testes
         public void CasoFalha_NomeBranco()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "",
@@ -54,7 +54,7 @@ namespace Pedidos.Testes
         public void CasoFalha_EmailBranco()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
@@ -75,7 +75,7 @@ namespace Pedidos.Testes
         public void CasoFalha_CPFBranco()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
@@ -93,10 +93,10 @@ namespace Pedidos.Testes
         }
 
         [Fact]
-        public void CasoFalha_ValorTotalBranco()
+        public void CasoFalha_ValorTotalInvalido()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
@@ -117,7 +117,7 @@ namespace Pedidos.Testes
         public void CasoFalha_DataPedidoBranco()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
@@ -138,7 +138,7 @@ namespace Pedidos.Testes
         public void CasoFalha_EmailInvalido()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
@@ -159,7 +159,7 @@ namespace Pedidos.Testes
         public void CasoFalha_CPFInvalido()
         {
             //Arrange
-            PedidoValidador validador = new PedidoValidador();
+            PedidoValidadorMock validador = new PedidoValidadorMock();
             Pedido pedido = new Pedido
             {
                 NomeCliente = "Cliente teste",
