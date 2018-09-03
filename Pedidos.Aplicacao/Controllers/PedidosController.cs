@@ -45,7 +45,7 @@ namespace APICorePedidos.Aplicacao.Controllers
             {
                 _servico.Alterar<PedidoValidador>(item);
 
-                return new ObjectResult(item);
+                return Ok(item);
             }
             catch (ArgumentNullException ex)
             {
@@ -83,7 +83,7 @@ namespace APICorePedidos.Aplicacao.Controllers
         {
             try
             {
-                return new ObjectResult(_servico.ObterTodos());
+                return Ok(_servico.ObterTodos());
             }
             catch (Exception ex)
             {
@@ -97,7 +97,7 @@ namespace APICorePedidos.Aplicacao.Controllers
         {
             try
             {
-                return new ObjectResult(_servico.ObterPorID(id));
+                return Ok(_servico.ObterPorID(id));
             }
             catch (ArgumentException ex)
             {

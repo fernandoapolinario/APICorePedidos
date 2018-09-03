@@ -7,7 +7,7 @@ namespace APICorePedidos.Dominio.Interfaces
     {
         int Inserir(Pedido pedido);
 
-        void Alterar(Pedido pedido);
+        int Alterar(Pedido pedido);
 
         void Deletar(int id);
 

@@ -6,6 +6,9 @@ using Xunit;
 
 namespace Pedidos.Testes
 {
+    /*
+     * Exemplo da utilização do NSubstitute para fazer testes integrados 
+     */
     public class TestesUnitarios_Integrados
     {
         private IPedidoRepositorio pedidoRepositorio;

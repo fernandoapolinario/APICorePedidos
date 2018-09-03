@@ -3,6 +3,7 @@ using APICorePedidos.Dominio.Entidades;
 using APICorePedidos.Dominio.Interfaces;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -13,8 +14,9 @@ namespace APICorePedidos.Data.Repositorio
     {
         public PedidoRepositorio(IConfiguration config) : base(config) { }
 
-        public void Alterar(Pedido pedido)
+        public int Alterar(Pedido pedido)
         {
+            int resultado = 0;
             using (IDbConnection db = BDConexao)
             {
                 var result = db.Execute("sp_Pedidos_Alterar",
@@ -27,7 +29,11 @@ namespace APICorePedidos.Data.Repositorio
                         @ValorTotal = pedido.ValorTotal,
                         @DataPedido = pedido.DataPedido
                     }, commandType: System.Data.CommandType.StoredProcedure);
+
+                resultado = result;
             }
+
+            return resultado;
         }
 
         public int Inserir(Pedido pedido)

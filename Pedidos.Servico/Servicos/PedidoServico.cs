@@ -20,7 +20,10 @@ namespace APICorePedidos.Servico.Servicos
         {
             obj.Validar(Activator.CreateInstance<V>());
 
-            _repositorio.Alterar(obj);
+            int resultado = _repositorio.Alterar(obj);
+
+            if (resultado != 1)
+                throw new Exception(String.Format("Não foi possível alterar o registro {0}.", obj.Id));
         }
 
         public void Deletar(int id)
